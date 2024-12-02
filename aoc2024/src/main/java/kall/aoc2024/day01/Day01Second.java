@@ -31,7 +31,7 @@ public class Day01Second extends BaseExercise {
 
         Integer totalSimilarity = 0;
 
-            for(int i = 0 ; i < leftList.size() ; i++) {
+        for(int i = 0 ; i < leftList.size() ; i++) {
             int similarity = leftList.get(i) * Collections.frequency(rightList, leftList.get(i));
 
             totalSimilarity += similarity;
