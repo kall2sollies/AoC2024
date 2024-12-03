@@ -17,17 +17,11 @@ public class Day03First extends BaseExercise {
 
         String data = String.join("", getLines());
 
-        Integer sum = extractOperations(data).stream() // [mul(1,2);mul(3;4)]
-            .map(o -> extractInner(o))
-            .flatMap(List::stream)
-            .toList() // ["1,2";"3,4"]
-            .stream()
-            .map(x -> extractNumbers(x))
-            .toList()
-            .stream()
-            .map(x -> multiply(x)).toList().stream().reduce(0, (a, b) -> a + b);
-
-
+        Integer sum = extractOperations(data) // [mul(1,2);mul(3;4)]
+            .stream().map(o -> extractInner(o)).flatMap(List::stream).toList() // ["1,2";"3,4"]
+            .stream().map(x -> extractNumbers(x)).toList() // [[1,2];[3,4]]
+            .stream().map(x -> multiply(x)).toList() // [2,12]
+            .stream().reduce(0, (a, b) -> a + b); // 24
 
         return sum.toString();
     }
