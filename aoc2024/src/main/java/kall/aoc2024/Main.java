@@ -1,6 +1,6 @@
 package kall.aoc2024;
 
-import kall.aoc2024.day03.Day03Second;
+import kall.aoc2024.day04.Day04First;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -9,6 +9,7 @@ public class Main {
         //System.out.println(new Day02First().run());
         //System.out.println(new Day02Second().run());
         //System.out.println(new Day03First().run());
-        System.out.println(new Day03Second().run());
+        //System.out.println(new Day03Second().run());
+        System.out.println(new Day04First().run());
     }
 }
