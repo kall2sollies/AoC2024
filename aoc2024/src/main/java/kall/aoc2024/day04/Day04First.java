@@ -22,14 +22,15 @@ public class Day04First extends BaseExercise {
             for (Integer y = 0 ; y < map.getYSize() ; y++) {
                 Cell cell = map.getCellAt(x, y);
 
-                if (cell.getValue() != pattern.get(0)) {
-                    continue;
-                }
-
                 for (Directions direction : DirectionsList.all()) {
-                    if (cell.getCellAtDirection(direction) != null && cell.getCellAtDirection(direction).getValue() == pattern.get(1) &&
-                        cell.getCellAtDirection(direction).getCellAtDirection(direction) != null && cell.getCellAtDirection(direction).getCellAtDirection(direction).getValue() == pattern.get(2) &&
-                        cell.getCellAtDirection(direction).getCellAtDirection(direction).getCellAtDirection(direction) != null && cell.getCellAtDirection(direction).getCellAtDirection(direction).getCellAtDirection(direction).getValue() == pattern.get(3)) {
+                    if (cell != null &&
+                        cell.getValue() == pattern.get(0) &&
+                        cell.getCellAtDirection(direction) != null &&
+                        cell.getCellAtDirection(direction).getValue() == pattern.get(1) &&
+                        cell.getCellAtDirection(direction).getCellAtDirection(direction) != null &&
+                        cell.getCellAtDirection(direction).getCellAtDirection(direction).getValue() == pattern.get(2) &&
+                        cell.getCellAtDirection(direction).getCellAtDirection(direction).getCellAtDirection(direction) != null &&
+                        cell.getCellAtDirection(direction).getCellAtDirection(direction).getCellAtDirection(direction).getValue() == pattern.get(3)) {
                         
                         found++;
 
